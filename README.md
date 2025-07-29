@@ -3,18 +3,6 @@ It is a multi-user app (one requires an administrator and other users) that mana
 
 ## 📁 Project Structure
 
-project-root/
-├── frontend/ # Vue.js frontend
-├── backend/ # Flask backend + Celery worker
-│ ├── app.py
-│ ├── celery_worker.py
-│ ├── models/
-│ ├── resources/
-│ ├── tasks/
-│ ├── config/
-│ ├── requirements.txt
-│ └── ...
-
 ## ⚙️ Prerequisites
 
 Ensure the following are installed:
@@ -45,18 +33,18 @@ Copy
 Edit
 python app.py
 The API will run on: http://localhost:5000
-
-### ⏱️ Start Celery Worker
+### 5. ⏱️ Start Celery Worker
 In a separate terminal:
 cd backend
 source venv/bin/activate 
 celery -A celery_worker.celery worker --loglevel=info
-### 🗓️ Start Celery Beat for Scheduled Tasks
+### 6. 🗓️ Start Celery Beat for Scheduled Tasks
 In another separate terminal
 cd backend
 source venv/bin/activate
 celery -A celery_worker.celery beat --loglevel=info
-### 🌐 Frontend Setup (Vue.js)
+
+## 🌐 Frontend Setup (Vue.js)
 ### 1. Navigate to frontend folder
 cd frontend
 ### 2. Install Node.js dependencies
